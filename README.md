@@ -2,9 +2,11 @@
 
 **Work in progress. Don't blame me if you raun down your battery**
 
-This is dialog overlay for delayed shutdown of in-car system using RPi and CarPiHat. I have OpenAuto Pro running, but this Qt app is entirely independent of OAP. 
+This is dialog overlay for intended for delayed shutdown of in-car system using RPi and CarPiHat. 
 
-Refer to docs for CarPiHet for more info on this PCB's latched powerdown function. [simple_shutdown.py](simple_shutdown.py) is the script provided in the CarPiHat wiki which safely shuts down RPi 10 seconds are ignition (IGN) has gone LOW (typ 12V).
+I have OpenAuto Pro  running, but this Qt app is entirely independent of OpenAuto Pro. 
+
+Refer to CarPiHat wiki for more info on this PCB's latched powerdown function. A Python script in included in CarPiHat wiki which safely shuts down RPi 10 seconds are ignition (IGN) has gone LOW (typ 12V).
 
 
 ## Some set up
@@ -13,10 +15,19 @@ Refer to docs for CarPiHet for more info on this PCB's latched powerdown functio
 sudo apt-get update
 sudo apt-get install python3-pyqt5
 ```
-2. There is some setup of pins and stuff to do - refer to CarPiHat wiki (here)
-3. In wiki the python script is set running from `rc.local`, prior to RPi Ui (and OAP starting). Different here - want to run the script after UI has started:
+2. In the CarPiHat wiki the python script is set running from `rc.local`, prior to RPi Ui (and OpenAuto Pro starting). Different here - we want to run the script after UI has started. Add the following at the end of 
+```
 
-[todo]
+```
+
+
+3. There is some setup of pins too (refer to CarPiHat wiki for more info). Add the following to "/boot/config.txt"
+```
+dtoverlay=gpio-poweroff,gpiopin=25,active_low
+```
+
 
 ## Configuration
-[todo]
+
+* You can change the snooze time and on screen countdown time at the top of the script. The defaults are 2 minutes and 10 seconds respectively.
+* Included is some css-type styling for the 
