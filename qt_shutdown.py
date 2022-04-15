@@ -22,8 +22,8 @@ IGN_PIN = 12		# our 12V switched pin is BCM12
 EN_POWER_PIN = 25	# our latch pin is BCM25
 
 ON_SCREEN_COUNTDOWN = 10  # 10 secs. 
-SNOOZE_TIME_MINS = 5/60 #1 mins in ms
-SNOOZE_TIME_MS = int(SNOOZE_TIME_MINS * 60 * 1000)
+SNOOZE_TIME_MINS = 1 #1 mins in ms
+SNOOZE_TIME_MS = int((5/60 if DEBUG else SNOOZE_TIME_MINS)* 60 * 1000)
 
 COUNTDOWN_STYLING ="""
     QLabel {
