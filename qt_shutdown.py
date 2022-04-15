@@ -2,6 +2,8 @@
 '''
 PyQt5 app that overlays *everything* to give a countdown on shutdown and
 a button to delay it. 
+Works with CarPiHat
+
 
 author: Jon Robinson (c)2022
 licence: MIT 
@@ -21,7 +23,7 @@ DEBUG = True
 IGN_PIN = 12		# our 12V switched pin is BCM12
 EN_POWER_PIN = 25	# our latch pin is BCM25
 
-ON_SCREEN_COUNTDOWN = 10  #secs. 
+ON_SCREEN_COUNTDOWN = 20  #secs. 
 SNOOZE_TIME_MINS = 2 #mins
 
 
@@ -163,6 +165,7 @@ class ShutDownApp(QWidget):
 
         print("Shutting Down")
         call("sudo shutdown -h now", shell=True)	# tell the Pi to shut down
+
 
 if __name__ == '__main__':
     if sys.argv and 'live' in sys.argv:

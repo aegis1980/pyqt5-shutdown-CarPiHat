@@ -3,11 +3,13 @@
 **Work in progress. Don't blame me if you run down your car battery**
 
 This is dialog overlay for delayed shutdown of in-car system using RPi and CarPiHat. 
-* When ignition goes off, it'll for **2 minutes** (default), then;
-* Popup a dialog onscreen with a second-by-second countdown from **10 seconds** (default)
-* If user does not press the snooze button, RPi will shut down on zero. Hitting snooze will dismiss the dialog for another 2 minutes.
+* When ignition goes off, it'll for **2 minutes** (by default), then;
+* Popup a dialog onscreen with a second-by-second countdown from **20 seconds** (by default)
+* If user does not press the snooze button, RPi will nicely shut down on zero. Hitting **snooze** will dismiss the dialog for another 2 minutes (by default).
 
 I have OpenAuto Pro running, but this Qt app is entirely independent of OpenAuto Pro. 
+
+![Snapshot of dialog over OAP](/snapshot.png)
 
 Refer to [CarPiHat wiki](https://github.com/gecko242/CarPiHat/wiki/Quick-Start-Guide#:~:text=SCL%3A%20BCM3-,Safe%20Shutdown%20Example,-%3A) for more info on the CarPiHat's latched powerdown function. A simple Python script in included in CarPiHat wiki which safely shuts down RPi 10 seconds after ignition (IGN) has gone LOW.
 
