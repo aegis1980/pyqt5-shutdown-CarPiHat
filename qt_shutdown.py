@@ -26,32 +26,36 @@ EN_POWER_PIN = 25	# our latch pin is BCM25
 ON_SCREEN_COUNTDOWN = 20  #secs. 
 SNOOZE_TIME_MINS = 2 #mins
 
+# UI_SCALE=1 suitable for RPi official touchscreen (840x480px)
+# HD (1980x1080): ~2.5
+UI_SCALE = 2.5
 
-COUNTDOWN_STYLING ="""
-    QLabel {
+
+COUNTDOWN_STYLING =f"""
+    QLabel {{
         color : black;
-        font : 24px;
-    }
+        font : {int(24*UI_SCALE)}px;
+    }}
 """
 
-SNOOZE_BTN_STYLING ="""
-    QPushButton {
+SNOOZE_BTN_STYLING =f"""
+    QPushButton {{
         background-color: #2B5DD1;
         color: #FFFFFF;
         border-style: outset;
-        padding: 3px;
-        font: 24px;
-        border-width: 5px;
-        border-radius: 10px;
+        padding: {int(3*UI_SCALE)}px;
+        font: {int(24*UI_SCALE)}px;
+        border-width: {int(5*UI_SCALE)}px;
+        border-radius: {int(10*UI_SCALE)}px;
         border-color: #2752B8;
-    }
-    QPushButton:hover {
+    }}
+    QPushButton:hover {{
         background-color: #4a75d9;
-    }
-    QPushButton:pressed {
+    }}
+    QPushButton:pressed {{
         background-color: #1e56d9;
         border-style: inset;
-    }
+    }}
 """
 
 GPIO.setwarnings(False)

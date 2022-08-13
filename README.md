@@ -56,6 +56,7 @@ sudo nano /boot/config.txt
 
 * You can change the snooze time (`SNOOZE_TIME_MINS` in **minutes**) and the on screen countdown time (`ON_SCREEN_COUNTDOWN` in **seconds**) at the top of the script. The defaults are 2 minutes and 10 seconds respectively.
 * Included is some css-type styling for the snooze button and countdown. Not that experienced with Qt - guess you can make it look however you please. 
+* Default UI sizing is for the official RPi touchscreen, which is (only) 800x480 (`UI_SCALE=1`). Use `UI_SCALE` to scale up for higher resolutions (e.g. Full HD, 1980x1080: `UI_SCALE=2.5`). Default is x2.5 (for full HD)
 
 ## Debug mode
 
